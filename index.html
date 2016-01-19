@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title>Clock Tower</title>
-      <meta charset="utf-8">
-      <link href="index.css" media="screen" rel="stylesheet" type="text/css"/>
+    <title>Clock Tower</title>
+    <meta charset="utf-8">
+    <link href="index.css" media="screen" rel="stylesheet" type="text/css">
   </head>
 
   <body>
-      <div id='clock'></div>
+    <div class="clock" data-timezone="UTC"></div>
+    <div class="clock" data-timezone="Asia/Shanghai"></div>
+    <div class="clock" data-timezone="America/Los_Angeles"></div>
+    <div class="clock" data-timezone="Europe/Athens"></div>
   </body>
+  <script src="clock.js"></script>
+  <script src="index.js"></script>
 </html>
-
-<script src="index.js"></script>
