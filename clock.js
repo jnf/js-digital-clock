@@ -12,21 +12,23 @@ let Clock = function(dom_node, timezone) {
     year: 'numeric',
     weekday: 'short'
   }
+}
 
-  this.refresh = function(time) {
+Clock.prototype = {
+  refresh: function(time) {
     time = time || Date.now();
     this.dom_node.innerHTML = new Date(time).toLocaleTimeString('en-us', this.options);
-  }
+  },
 
-  this.start = function() {
+  start: function() {
     if(this.interval_id) return this.interval_id;
 
     this.interval_id = setInterval(this.refresh.bind(this), this.refresh_delay);
 
     return this.interval_id;
-  }
+  },
 
-  this.stop = function() {
+  stop: function() {
     clearInterval(this.interval_id);
     this.interval_id = null;
   }
